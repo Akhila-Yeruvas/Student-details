@@ -1,6 +1,6 @@
 import csv
 def write_into_csv(stu_info):
-    with open('studentInfo.csv','w') as file:
+    with open('studentInfo.csv','a',new line='\n') as file:
         writer=csv.writer(file)
         writer.writerow(["Name","Age","Contact Number","Email Id"])
         writer.writerow(stu_info)
