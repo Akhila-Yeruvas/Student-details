@@ -1,0 +1,29 @@
+import csv
+def write_into_csv(stu_info):
+    with open('studentInfo.csv','w') as file:
+        writer=csv.writer(file)
+        writer.writerow(["Name","Age","Contact Number","Email Id"])
+        writer.writerow(stu_info)
+
+condition=True
+while(condition):
+    stu_info=input("Enter the student details (Name Age Contact_number Email_id):")
+    stu_info=stu_info.split(' ')
+    print("The entered information is:")
+    print("Name:",stu_info[0])
+    print("Age:",stu_info[1])
+    print("Contact_number:",stu_info[2])
+    print("Email_id:",stu_info[3])
+    print("Is the information correct (yes/no):")
+    check=input()
+    if check=="yes":
+        write_into_csv(stu_info)
+        print("Do you want to enter another student details (yes/no):")
+        check1=input()
+        if check1=="yes":
+            condition=True
+        else:
+            condition=False
+    else:
+        print("Please reenter the values:")
+        
